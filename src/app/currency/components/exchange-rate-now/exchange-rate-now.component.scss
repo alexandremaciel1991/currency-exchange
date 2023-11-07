@@ -1,0 +1,48 @@
+@import "_colors";
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.currency-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.subtitle-text {
+  h4 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+.currency-style {
+  h1 {
+    margin-bottom: 0;
+  }
+  margin: 0;
+  color: $primary;
+}
+
+.currency-value {
+  display: flex;
+  width: 330px;
+  height: 72px;
+  flex-shrink: 0;
+
+  background: $backgroundPrimary;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  span {
+    color: $primary;
+    margin: 0;
+  }
+}

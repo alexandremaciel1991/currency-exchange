@@ -1,0 +1,58 @@
+@import "_colors";
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 15px 20px;
+  background-color: $white;
+  gap: 16px;
+  max-width: 310px;
+  min-width: 270px;
+}
+
+.date-style {
+  color: $primary;
+  margin: 0;
+  font-weight: 600;
+}
+.card-change {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card-status {
+  display: flex;
+  flex-direction: column;
+  .mat-caption {
+    text-transform: uppercase;
+    display: inline-block;
+    width: 47px;
+  }
+}
+
+.card-value {
+  display: flex;
+  flex-direction: column;
+  .mat-caption {
+    text-transform: uppercase;
+    display: inline-block;
+    width: 47px;
+  }
+}
+
+.percent-diff {
+  .mat-body-2 {
+    display: inline-flex;
+    margin: 0 8px;
+  }
+
+  .green {
+    color: $green;
+    &::before {
+      content: "+";
+    }
+  }
+
+  .red {
+    color: $alertRed;
+  }
+}

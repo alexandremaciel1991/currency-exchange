@@ -1,0 +1,42 @@
+@import "_colors";
+.headers-align {
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-expansion-panel {
+  box-shadow: none !important;
+  border-bottom: 2px solid $primary;
+  border-radius: 0;
+  min-width: 330px;
+  margin-bottom: 40px;
+  mat-expansion-panel-header {
+    padding: 0;
+    mat-panel-title {
+      flex-grow: 2;
+      margin-right: 0;
+      flex-basis: unset;
+    }
+
+    mat-panel-description {
+      justify-content: flex-end;
+      margin-right: 0;
+    }
+  }
+
+  ::ng-deep .mat-expansion-panel-content {
+    .mat-expansion-panel-body {
+      padding: 0 !important;
+    }
+  }
+
+  .list-card {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: $neutralGrey03;
+  }
+}

@@ -1,0 +1,29 @@
+@import "_colors";
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  background-color: $white;
+}
+
+mat-toolbar-row {
+  padding: 0 15px;
+  max-width: 650px;
+  height: auto;
+  .divider {
+    width: 100%;
+    border: solid 1px $neutralGrey02;
+    margin-bottom: 32px;
+  }
+}
+.header-center {
+  margin: 0 auto 16px;
+}
+
+.header-title {
+  text-align: center;
+  text-transform: uppercase;
+  color: $primary;
+  margin: 0 0 32px;
+}

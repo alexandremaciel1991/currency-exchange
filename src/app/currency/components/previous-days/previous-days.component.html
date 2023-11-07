@@ -1,0 +1,26 @@
+<mat-expansion-panel
+  (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false"
+  hideToggle="true"
+  class="remove-mat-expansion-panel-padding"
+>
+  <mat-expansion-panel-header class="headers-align">
+    <mat-panel-title> LAST 30 DAYS </mat-panel-title>
+    <mat-panel-description>
+      <mat-icon color="primary" *ngIf="!panelOpenState">add</mat-icon>
+      <mat-icon color="primary" *ngIf="panelOpenState">remove</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="list-card">
+    <span *ngFor="let item of data">
+      <app-previous-cards
+        [open]="item.open"
+        [close]="item.close"
+        [high]="item.high"
+        [low]="item.low"
+        [date]="item.date"
+        [closeDiff]="getCloseDiff(item.close)"
+      ></app-previous-cards>
+    </span>
+  </div>
+</mat-expansion-panel>

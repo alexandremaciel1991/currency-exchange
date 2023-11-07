@@ -1,0 +1,44 @@
+<div class="container">
+  <form [formGroup]="formCurrency">
+    <div class="check-currency">
+      <mat-form-field class="currency-input">
+        <mat-label>Enter the currency code</mat-label>
+        <input matInput formControlName="fromSymbol" />
+      </mat-form-field>
+      <button
+        mat-fab
+        extended
+        class="button-result"
+        color="primary"
+        [disabled]="!formCurrency.valid"
+        (click)="getCurrency()"
+      >
+        Exchange result
+      </button>
+    </div>
+  </form>
+
+  <div class="exchange-container">
+    <span *ngIf="loading">
+      <mat-spinner></mat-spinner>
+    </span>
+
+    <span *ngIf="currentExchangeRate && !loading">
+      <div class="divider">
+        <mat-divider></mat-divider>
+      </div>
+      <app-exchange-rate-now
+        [fromSymbol]="currentExchangeRate.fromSymbol"
+        [toSymbol]="currentExchangeRate.toSymbol"
+        [lastUpdatedAt]="currentExchangeRate.lastUpdatedAt"
+        [exchangeRate]="currentExchangeRate.exchangeRate"
+      ></app-exchange-rate-now>
+    </span>
+    <span *ngIf="currentDailyExchangeRate && !loading">
+      <app-previous-days
+        [data]="currentDailyExchangeRate.data"
+        [exchangeRate]="currentExchangeRate.exchangeRate"
+      ></app-previous-days>
+    </span>
+  </div>
+</div>

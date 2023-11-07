@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="currency-details">
+    <div class="subtitle-text">
+      <h4 class="mat-subtitle-2">Exchange rate now</h4>
+      <p class="mat-body-1">{{ lastUpdatedAt | date : "dd/M/YYYY, hh:mm" }}</p>
+    </div>
+    <div class="currency-style mat-h1">
+      <h1>{{ fromSymbol | uppercase }}/{{ toSymbol | uppercase }}</h1>
+    </div>
+  </div>
+
+  <div class="currency-value">
+    <span class="mat-headline-4"> {{ exchangeRate | currency : "BRL" }} </span>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="mat-body-1 date-style">
+    {{ date | date : "dd/M/YYYY" }}
+  </div>
+  <div class="card-change">
+    <div class="card-status">
+      <div>
+        <span class="mat-caption">Open: </span
+        ><span class="mat-body-2">{{ open | currency : "BRL" }}</span>
+      </div>
+      <div>
+        <span class="mat-caption">Close: </span
+        ><span class="mat-body-2">{{ close | currency : "BRL" }} </span>
+      </div>
+    </div>
+    <div class="card-value">
+      <div>
+        <span class="mat-caption">Hight:</span
+        ><span class="mat-body-2">{{ high | currency : "BRL" }}</span>
+      </div>
+      <div>
+        <span class="mat-caption">Low: </span
+        ><span class="mat-body-2">{{ low | currency : "BRL" }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="percent-diff">
+    <span class="mat-caption">close diff (%):</span>
+    <span class="mat-body-2" [ngClass]="closeDiff > 0 ? 'green' : 'red'">
+      {{ closeDiff }}%
+      <mat-icon> {{ closeDiff > 0 ? "expand_less" : "expand_more" }} </mat-icon>
+    </span>
+  </div>
+</div>
